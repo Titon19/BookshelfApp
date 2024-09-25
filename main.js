@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function addBook() {
     const title = document.getElementById("bookFormTitle").value;
     const author = document.getElementById("bookFormAuthor").value;
-    const year = document.getElementById("bookFormYear").value;
+    const year = Number(document.getElementById("bookFormYear").value);
     const isComplete = document.getElementById("bookFormIsComplete").checked;
 
     const id = generateId();
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateBook(bookId) {
     const title = document.getElementById("bookFormTitle").value;
     const author = document.getElementById("bookFormAuthor").value;
-    const year = document.getElementById("bookFormYear").value;
+    const year = Number(document.getElementById("bookFormYear").value);
     const isComplete = document.getElementById("bookFormIsComplete");
     isComplete.checked;
 
