@@ -140,17 +140,18 @@ document.addEventListener("DOMContentLoaded", () => {
     author.value = book.author;
     year.value = book.year;
     isComplete.checked = book.isComplete;
-
-    isComplete.disabled = true;
     document.dispatchEvent(new Event(RENDER_EVENT));
     editingBookId = bookId;
+
+    isComplete.disabled = true;
   }
 
   function updateBook(bookId) {
     const title = document.getElementById("bookFormTitle").value;
     const author = document.getElementById("bookFormAuthor").value;
     const year = document.getElementById("bookFormYear").value;
-    const isComplete = document.getElementById("bookFormIsComplete").checked;
+    const isComplete = document.getElementById("bookFormIsComplete");
+    isComplete.checked;
 
     const book = books.find((book) => book.id === bookId);
     if (!book) {
@@ -165,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("books", JSON.stringify(books));
     bookForm.reset();
+
+    isComplete.disabled = false;
     editingBookId = null;
   }
 
